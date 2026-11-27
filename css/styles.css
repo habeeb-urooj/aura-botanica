@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-cream-bg: #FAF8F5;
+  --color-linen: #F4EFEB;
+  --color-botanica-dark: #27402F;
+  --color-botanica: #3B5F45;
+  --color-botanica-light: #EBF2EC;
+  --color-terracotta: #BC7455;
+  --color-earth-dark: #1E221F;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-cream-bg);
+  color: var(--color-earth-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFEB;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4C9BF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B3A497;
+}
+
+/* Shimmer & Glow Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* Glassmorphism Navigation */
+.glass-header {
+  background: rgba(250, 248, 245, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Editorial badge shimmer */
+.luxury-tag {
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Product Card Subtle Shadow Elevation */
+.product-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Hero organic blob background */
+.blob-shape {
+  border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+  animation: morphBlob 12s ease-in-out infinite alternate;
+}
+
+@keyframes morphBlob {
+  0% {
+    border-radius: 60% 40% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    border-radius: 40% 60% 30% 70% / 50% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 50% 50% 40% 60% / 60% 40% 50% 50%;
+  }
+}
